@@ -1,0 +1,14 @@
+{
+  "apps": [{
+    "name": "synthesizer",
+    "script": "./index.js",
+    "max_memory_restart": "500M",
+    "watch": true,
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "env_production" : {
+      "NODE_ENV": "production"
+    }
+  }]
+}

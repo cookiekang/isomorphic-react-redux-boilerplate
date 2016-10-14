@@ -1,0 +1,1 @@
+ --recursive --compilers js:test/prepare.js,js:babel-register --require test/helper.js
