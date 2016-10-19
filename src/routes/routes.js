@@ -23,14 +23,26 @@ export function getChildRoutes(store) {
   return flatten(translatedChildRoutes);
 }
 
-function getTranslatedPath(locale, urlKey) {
-  // const locParam = ':locId';
+// TODO: unexport when getTranslatedUrl function is used
+export function getTranslatedPath(locale, urlKey) {
   const localeParam = ':locale';
+  // const locId = ':locId';
 
   if (locale === 'en-US') {
+    // use commented out line when multiple types of same location en-US en-GB
+    // return `${urls[locale][urlKey]}/l/${locId}`;
     return `${urls[locale][urlKey]}`;
   }
 
+  // use commented out line when multiple types of same location en-US en-GB
+  // return `${localeParam}/${urls[locale][urlKey]}/l/${locId}`
   return `${localeParam}/${urls[locale][urlKey]}`;
-
 }
+
+// export function getTranslatedUrl(locale, urlKey) {
+//   if (locale === 'en-US') {
+//     return `/${urls[locale][urlKey]}/l/`;
+//   }
+//
+//   return `/${locale}/${urls[locale][urlKey]}/l/`;
+// }

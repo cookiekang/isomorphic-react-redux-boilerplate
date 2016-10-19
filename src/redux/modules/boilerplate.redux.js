@@ -1,5 +1,3 @@
-const boilerplateData = 'boilerplate yall';
-
 //
 // CONSTANTS
 //
@@ -81,7 +79,7 @@ export function loadBoilerplateAsync(param) {
   return (dispatch) => {
     dispatch(loadBoilerplatePending());
     return new Promise((resolve) => {
-      return resolve({
+      resolve({
         boilerplate: param
       });
     })

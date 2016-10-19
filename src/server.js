@@ -2,13 +2,10 @@
 
 import 'isomorphic-fetch';
 import Koa from 'koa';
-import configKoa from './server/config/koa';
-import reactRender from './server/reactRender';
+import middleware from './server/middleware';
 
 const app = new Koa();
 
-configKoa(app);
-reactRender(app);
+middleware(app);
 
 export default app;
-

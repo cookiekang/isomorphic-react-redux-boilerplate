@@ -4,18 +4,14 @@ import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { loadNamespaces } from 'react-i18next';
-import createStore from './redux/createStore';
-import createRoutes from './routes/createRoutes';
-import matchRoutes from './routes/matchRoutes';
-import App from './components/App/App';
-import i18n from './client/i18n-client';
-import './client/windowEvents';
+import createStore from '../redux/createStore';
+import createRoutes from '../routes/createRoutes';
+import matchRoutes from '../routes/matchRoutes';
+import App from '../components/App/App';
+import i18n from './i18n-client';
+import './windowEvents';
 
-try {
-  render();
-} catch (err) {
-  console.error(err);
-}
+render();
 
 async function render() {
   const DOM_APP = document.getElementById('APP');

@@ -4,7 +4,7 @@ import './scss/Boilerplate.scss';
 
 const Boilerplate = ({ t, boilerplate }) => (
   <div>
-    <Helmet title="Boilerplate" />
+    <Helmet title="Synthesizer" />
     <h1 className="boilerplate">{t('boilerplate:boilerplate')} Boilerplate Page</h1>
     <p>{boilerplate}</p>
   </div>

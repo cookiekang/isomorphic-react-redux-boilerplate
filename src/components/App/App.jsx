@@ -3,26 +3,40 @@ import { Router } from 'react-router';
 import { ReduxAsyncConnect } from 'redux-connect';
 import { Provider } from 'react-redux';
 import { I18nextProvider } from 'react-i18next';
+import isClient from '../../utils/isClient';
 
-const App = ({ history, routes, routerKey, store, i18n }) => (
-  <I18nextProvider i18n={i18n}>
-    <Provider store={store}>
-      <Router
-        render={(props) => <ReduxAsyncConnect {...props} />}
-        history={history}
-        children={routes}
-        key={routerKey}
-      />
-    </Provider>
-  </I18nextProvider>
-);
+const App = ({
+  history,
+  i18n,
+  renderProps,
+  routes,
+  store
+}) => {
+  const routerChild = isClient() ? (
+    <Router
+      render={(props) => <ReduxAsyncConnect {...props} />}
+      history={history}
+      routes={routes}
+    />
+  ) : (
+    <ReduxAsyncConnect {...renderProps} />
+  );
+
+  return (
+    <I18nextProvider i18n={i18n}>
+      <Provider store={store}>
+        {routerChild}
+      </Provider>
+    </I18nextProvider>
+  );
+};
 
 App.propTypes = {
   history: PropTypes.object.isRequired,
+  i18n: PropTypes.object,
+  renderProps: PropTypes.object.isRequired,
   routes: PropTypes.object.isRequired,
-  routerKey: PropTypes.number,
-  store: PropTypes.object.isRequired,
-  i18n: PropTypes.object
+  store: PropTypes.object.isRequired
 };
 
 export default App;

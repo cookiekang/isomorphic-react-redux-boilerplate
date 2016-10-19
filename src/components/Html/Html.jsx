@@ -12,11 +12,31 @@ import Helmet from 'react-helmet';
  * HTML doctype declaration, which is added to the rendered output
  * by the server.js file.
  */
-const Html = ({ assets, component, store }) => {
+const Html = ({
+  assets,
+  component,
+  store
+}) => {
   const content = component ? ReactDOM.renderToString(component) : '';
   const head = Helmet.rewind();
   const domApp = { __html: content };
   const domState = { __html: `window.__data=${serialize(store.getState())};` };
+
+  const clientScripts = ([
+    <script key="state" dangerouslySetInnerHTML={domState} charSet="UTF-8" />,
+    <script key="vendor" src={assets.javascript.vendor} charSet="UTF-8" />,
+    <script key="main" src={assets.javascript.main} charSet="UTF-8" />
+  ]);
+
+  const clientCss = Object.keys(assets.styles)
+    .map((style, key) => (
+      <link
+        href={assets.styles[style]}
+        key={key} media="screen, projection"
+        rel="stylesheet" type="text/css"
+        charSet="UTF-8"
+      />
+    ));
 
   return (
     <html lang="en-us">
@@ -28,22 +48,11 @@ const Html = ({ assets, component, store }) => {
         {head.script.toComponent()}
         <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {
-          Object.keys(assets.styles).map((style, key) => (
-            <link
-              href={assets.styles[style]}
-              key={key} media="screen, projection"
-              rel="stylesheet" type="text/css"
-              charSet="UTF-8"
-            />
-          ))
-        }
+        {clientCss}
       </head>
       <body>
         <div id="APP" dangerouslySetInnerHTML={domApp} />
-        <script dangerouslySetInnerHTML={domState} charSet="UTF-8" />
-        <script src={assets.javascript.vendor} charSet="UTF-8" />
-        <script src={assets.javascript.main} charSet="UTF-8" />
+        {clientScripts}
       </body>
     </html>
   );

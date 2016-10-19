@@ -6,7 +6,7 @@
 const config = {
   logType: process.env.LOGTYPE || 'dev',
   port: process.env.APP_PORT || 3000,
-  ip: process.env.APP_IP || 'localhost',
+  ip: process.env.APP_IP || '0.0.0.0',
   env: process.env.NODE_ENV || 'dev'
 };
 
