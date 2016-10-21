@@ -5,7 +5,7 @@ import './scss/SynthesizerPage.scss';
 const SynthesizerPage = ({ t, synthesizerPage }) => (
   <div>
     <Helmet title="SynthesizerPage" />
-    <h1 className="synthesizerPage">{t('synthesizerPage:synthesizerPage')} Synthesizer Page</h1>
+    <h1 className="synthesizerPage">{t('synthesizerPage:list of synthesizers')}</h1>
     <p>{synthesizerPage}</p>
   </div>
 );
