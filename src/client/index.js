@@ -21,7 +21,11 @@ async function render() {
   const history = syncHistoryWithStore(browserHistory, store, {
     selectLocationState: (state) => state.router
   });
-  const matched = await matchRoutes({ routes, history });
+  const { pathname, search, hash } = window.location;
+  const location = `${pathname}${search}${hash}`;
+  const routerKey = null;
+
+  const matched = await matchRoutes({ routes, location });
   const { renderProps } = matched;
   const { params } = renderProps;
   const locale = params.locale || 'en-US';
@@ -35,6 +39,7 @@ async function render() {
       store={store}
       history={history}
       routes={routes}
+      routerKey={routerKey}
       i18n={i18n}
     />,
     DOM_APP

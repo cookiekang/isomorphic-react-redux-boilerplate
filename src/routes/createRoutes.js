@@ -1,10 +1,9 @@
 import Layout from '../components/Layout/Layout';
-import { homeRoute, getChildRoutes } from './routes';
+import { getChildRoutes } from './routes';
 
 export const createRoutes = (store) => ({
   path: '/',
   component: Layout,
-  indexRoute: homeRoute,
   childRoutes: getChildRoutes(store)
 });
 

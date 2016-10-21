@@ -1,12 +1,16 @@
-export homeRoute from './pages/Home.route';
+import homeRoute from './pages/home.route';
 import boilerplateRoute from './pages/Boilerplate.route';
 import flatten from 'lodash/flatten';
 
 // Generated from all urls.json translated in translations directory
-import urls from './urls.json';
+import urls from '../translations/urls.json';
 
 // Configured for all child routes that need to be translated for
 const childRoutes = [
+  {
+    translationKey: 'home',
+    route: homeRoute
+  },
   {
     translationKey: 'boilerplate',
     route: boilerplateRoute
@@ -26,16 +30,13 @@ export function getChildRoutes(store) {
 // TODO: unexport when getTranslatedUrl function is used
 export function getTranslatedPath(locale, urlKey) {
   const localeParam = ':locale';
-  // const locId = ':locId';
 
   if (locale === 'en-US') {
     // use commented out line when multiple types of same location en-US en-GB
-    // return `${urls[locale][urlKey]}/l/${locId}`;
     return `${urls[locale][urlKey]}`;
   }
 
   // use commented out line when multiple types of same location en-US en-GB
-  // return `${localeParam}/${urls[locale][urlKey]}/l/${locId}`
   return `${localeParam}/${urls[locale][urlKey]}`;
 }
 

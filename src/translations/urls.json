@@ -1,0 +1,10 @@
+{
+  "en-US": {
+    "home": "home",
+    "boilerplate": "boilerplate"
+  },
+  "fr-FR": {
+    "home": "domicile",
+    "boilerplate": "passe-partout"
+  }
+}

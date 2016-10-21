@@ -27,6 +27,7 @@ async function render() {
   });
   const matched = await matchRoutes({ routes, history });
   const { renderProps } = matched;
+
   const { params } = renderProps;
   const locale = params.locale || 'en-US';
 
@@ -36,10 +37,11 @@ async function render() {
 
   ReactDOM.render(
     <App
-      store={store}
       history={history}
-      routes={routes}
       i18n={i18n}
+      renderProps={renderProps}
+      routes={routes}
+      store={store}
     />,
     DOM_APP
   );

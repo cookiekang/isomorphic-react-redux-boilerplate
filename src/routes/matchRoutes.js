@@ -1,6 +1,7 @@
 import { match } from 'react-router';
 
 export default function matchRoutes(context) {
+
   const {
     routes,
     location,
@@ -17,6 +18,7 @@ export default function matchRoutes(context) {
       redirectLocation,
       renderProps
     ) => {
+
       if (error) {
         return reject(error);
       }
