@@ -14,7 +14,7 @@ export const makeRootReducer = (asyncReducers) => combineReducers({
   // Pseudo async reducers
   // These are injected by webpack bundles when navigated to the route
   // https://gist.github.com/gaearon/0a2213881b5d53973514
-  boilerplate: (state = {}) => state,
+  synthesizerPage: (state = {}) => state,
   ...asyncReducers
 });
 

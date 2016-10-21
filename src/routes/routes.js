@@ -1,5 +1,5 @@
 import homeRoute from './pages/home.route';
-import boilerplateRoute from './pages/Boilerplate.route';
+import synthesizerPageRoute from './pages/SynthesizerPage.route';
 import flatten from 'lodash/flatten';
 
 // Generated from all urls.json translated in translations directory
@@ -12,8 +12,8 @@ const childRoutes = [
     route: homeRoute
   },
   {
-    translationKey: 'boilerplate',
-    route: boilerplateRoute
+    translationKey: 'synthesizerPage',
+    route: synthesizerPageRoute
   }
 ];
 

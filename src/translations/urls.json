@@ -1,10 +1,10 @@
 {
   "en-US": {
     "home": "home",
-    "boilerplate": "boilerplate"
+    "synthesizerPage": "synthesizerPage"
   },
   "fr-FR": {
     "home": "domicile",
-    "boilerplate": "passe-partout"
+    "synthesizerPage": "synthesizerPage"
   }
 }

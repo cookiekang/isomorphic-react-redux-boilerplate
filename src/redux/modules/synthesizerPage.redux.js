@@ -7,9 +7,9 @@
 //
 // Syncronous actions should start with a verb indication the action. Eg.
 // SHOW_NAV_BAR, ADD_NAV_ITEM, REMOVE_ADD_ITEM
-const LOAD_BOILERPLATE_PENDING = 'synthesizer/LOAD_BOILERPLATE_PENDING';
-const LOAD_BOILERPLATE_SUCCESS = 'synthesizer/LOAD_BOILERPLATE_SUCCESS';
-const LOAD_BOILERPLATE_FAILURE = 'synthesizer/LOAD_BOILERPLATE_FAILURE';
+const LOAD_SYNTHESIZER_PAGE_PENDING = 'synthesizer/LOAD_SYNTHESIZER_PAGE_PENDING';
+const LOAD_SYNTHESIZER_PAGE_SUCCESS = 'synthesizer/LOAD_SYNTHESIZER_PAGE_SUCCESS';
+const LOAD_SYNTHESIZER_PAGE_FAILURE = 'synthesizer/LOAD_SYNTHESIZER_PAGE_FAILURE';
 
 //
 // INITIAL STATE
@@ -17,7 +17,7 @@ const LOAD_BOILERPLATE_FAILURE = 'synthesizer/LOAD_BOILERPLATE_FAILURE';
 // This is the initial state of what the reducer sets to the
 // redux store.
 const initialState = {
-  boilerplate: {},
+  synthesizerPage: {},
   loading: false,
   loaded: false,
   error: undefined
@@ -31,19 +31,19 @@ const initialState = {
 // the function should return a new state object.
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
-    case LOAD_BOILERPLATE_PENDING:
+    case LOAD_SYNTHESIZER_PAGE_PENDING:
       return {
         ...state,
         loading: true
       };
-    case LOAD_BOILERPLATE_SUCCESS:
+    case LOAD_SYNTHESIZER_PAGE_SUCCESS:
       return {
         ...state,
         location: action.result,
         loading: false,
         loaded: true
       };
-    case LOAD_BOILERPLATE_FAILURE:
+    case LOAD_SYNTHESIZER_PAGE_FAILURE:
       return {
         ...state,
         loading: false,
@@ -75,35 +75,35 @@ export default function reducer(state = initialState, action = {}) {
 //
 // Async actions must be appended with Async to denote they can be
 // promise chained.
-export function loadBoilerplateAsync(param) {
+export function loadSynthesizerPageAsync(param) {
   return (dispatch) => {
-    dispatch(loadBoilerplatePending());
+    dispatch(loadSynthesizerPagePending());
     return new Promise((resolve) => {
       resolve({
-        boilerplate: param
+        synthesizerPage: param
       });
     })
-    .then(data => dispatch(loadBoilerplateSuccess(data)))
-    .catch(err => dispatch(loadBoilerplateFailure(err)));
+    .then(data => dispatch(loadSynthesizerPageSuccess(data)))
+    .catch(err => dispatch(loadSynthesizerPageFailure(err)));
   };
 }
 
-export function loadBoilerplatePending() {
+export function loadSynthesizerPagePending() {
   return {
-    type: LOAD_BOILERPLATE_PENDING
+    type: LOAD_SYNTHESIZER_PAGE_PENDING
   };
 }
 
-export function loadBoilerplateSuccess(data) {
+export function loadSynthesizerPageSuccess(data) {
   return {
-    type: LOAD_BOILERPLATE_SUCCESS,
+    type: LOAD_SYNTHESIZER_PAGE_SUCCESS,
     result: data
   };
 }
 
-export function loadBoilerplateFailure(err) {
+export function loadSynthesizerPageFailure(err) {
   return {
-    type: LOAD_BOILERPLATE_FAILURE,
+    type: LOAD_SYNTHESIZER_PAGE_FAILURE,
     error: err
   };
 }
