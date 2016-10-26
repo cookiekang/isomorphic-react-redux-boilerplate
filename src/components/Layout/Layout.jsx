@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import '../../sass/global-styles.scss';
 
 export const Layout = ({ children }) => (
-  <div className="layout">
+  <div className="container">
     <div id="Header">
       {/* Header goes here  */}
     </div>

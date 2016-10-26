@@ -11,7 +11,9 @@ const SynthesizerPage = ({
   return (
     <div>
       <Helmet title="SynthesizerPage" />
-      <h1 className="synthesizerPage">{t('synthesizerPage:list of synthesizers')}</h1>
+      <div className="page-header">
+        <h1 className="synthesizerPage">{t('synthesizerPage:list of synthesizers')}</h1>
+      </div>
     </div>
   );
 };

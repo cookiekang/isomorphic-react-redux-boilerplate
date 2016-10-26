@@ -42,6 +42,10 @@ let WebPackConfig = {
   module: {
     loaders: [
       {
+        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+        loader: 'file'
+      },
+      {
         test: /.jsx?$/, // Match both .js and .jsx
         exclude: /node_modules/,
         loader: 'babel-loader'

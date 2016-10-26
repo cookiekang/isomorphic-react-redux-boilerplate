@@ -41,17 +41,22 @@ const Html = ({
   return (
     <html lang="en-us">
       <head>
+        <meta charSet="utf-8" />
+        <meta htp-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {head.base.toComponent()}
         {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
         {head.script.toComponent()}
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {clientCss}
       </head>
       <body>
-        <div id="APP" dangerouslySetInnerHTML={domApp} />
+        <div
+          id="APP"
+          dangerouslySetInnerHTML={domApp}
+        />
         {clientScripts}
       </body>
     </html>
