@@ -4,8 +4,8 @@ import Helmet from 'react-helmet';
 import './scss/Synthesizer.scss';
 
 const Synthesizer = ({
+  synthesizersList,
   t,
-  synthesizer
 }) => {
 
   return (
@@ -19,7 +19,7 @@ const Synthesizer = ({
 };
 
 Synthesizer.propTypes = {
-  synthesizer: PropTypes.object,
+  synthesizersList: PropTypes.object,
   t: PropTypes.func
 };
 

@@ -5,9 +5,9 @@ const path = require('path');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const StyleLintPlugin = require('stylelint-webpack-plugin');
 const VendorChunkPlugin = require('webpack-vendor-chunk-plugin');
 const autoprefixer = require('autoprefixer');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 const webpackIsomorphicToolsConfig = require('./webpack-isomorphic-tools-configuration');
 const webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(webpackIsomorphicToolsConfig);
@@ -20,7 +20,7 @@ const dirs = {
   nodeModules: path.resolve(__dirname, '../node_modules')
 };
 
-let WebPackConfig = {
+const WebPackConfig = {
   entry: {
     main: [
       './src/client.js'
@@ -107,12 +107,15 @@ let WebPackConfig = {
     new ExtractTextPlugin('css/[name]-[chunkhash].css', {
       allChunks: true
     }),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      failOnError: false
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'js/[name]-[hash].js',
       minChunks: Infinity
     }),
-    //new styleLintPlugin(),
     new VendorChunkPlugin('vendor')
   ]
 };

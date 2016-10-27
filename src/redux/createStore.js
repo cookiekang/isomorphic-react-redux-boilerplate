@@ -2,6 +2,7 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
 import thunkMiddleware from 'redux-thunk';
 import promiseMiddleware from './middleware/promiseMiddleware';
+// import localForageMiddleware, { loadFromLocalForage } from './middleware/localForageMiddleware';
 import createLogger from 'redux-logger';
 import makeRootReducer from './reducers';
 import isClient from '../utils/isClient';
@@ -16,7 +17,8 @@ export default (history, initialState = {}) => {
   const middleware = [
     promiseMiddleware(),
     thunkMiddleware,
-    routerMiddleware(history)
+    routerMiddleware(history),
+    // localForageMiddleware
   ];
 
   if (isDevelopment() && isClient()) {
@@ -50,6 +52,8 @@ export default (history, initialState = {}) => {
   );
 
   store.asyncReducers = {};
+
+  // loadFromLocalForage(store);
 
   return store;
 };

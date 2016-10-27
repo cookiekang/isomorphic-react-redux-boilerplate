@@ -7,7 +7,7 @@ import { loadNamespaces } from 'react-i18next';
 import createStore from './redux/createStore';
 import createRoutes from './routes/createRoutes';
 import matchRoutes from './routes/matchRoutes';
-import App from './components/App/App';
+import App from './components/App';
 import i18n from './client/i18n-client';
 import './client/windowEvents';
 

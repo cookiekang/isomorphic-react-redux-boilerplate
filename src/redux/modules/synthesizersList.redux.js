@@ -41,7 +41,7 @@ export default function reducer(state = initialState, action = {}) {
     case LOAD_SYNTHESIZERS_LIST_SUCCESS:
       return {
         ...state,
-        synthesizersList: action.result.synthesizersList,
+        synthesizersList: action.result,
         loading: false,
         loaded: true
       };

@@ -8,8 +8,8 @@ export function loadPageAsync(locale) {
   }
 
   return (dispatch) => {
+    dispatch(changeLocale(locale));
     // dispatch(loadHeaderAsync());
-    dispatch(loadFooterAsync());
-    return dispatch(changeLocale(locale));
+    return dispatch(loadFooterAsync());
   };
 }
