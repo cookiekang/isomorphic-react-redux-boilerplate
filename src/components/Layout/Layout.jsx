@@ -4,8 +4,6 @@ import '../../sass/global-styles.scss';
 
 export const Layout = ({ children }) => {
 
-  console.log('children',children)
-
   return (
     <div className="container">
       <div id="Header">

@@ -1,6 +1,7 @@
 import { reducer as reduxAsyncConnect } from 'redux-connect';
 import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
+// import { reducer as storageReducer } from 'redux-storage';
 import home from './modules/home.redux';
 import footer from './modules/footer.redux';
 

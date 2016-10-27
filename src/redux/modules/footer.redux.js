@@ -1,6 +1,6 @@
-const LOAD_FOOTER_PENDING = 'twc/LOAD_FOOTER_PENDING';
-const LOAD_FOOTER_SUCCESS = 'twc/LOAD_FOOTER_SUCCESS';
-const LOAD_FOOTER_FAILURE = 'twc/LOAD_FOOTER_FAILURE';
+const LOAD_FOOTER_PENDING = 'synthesizer/LOAD_FOOTER_PENDING';
+const LOAD_FOOTER_SUCCESS = 'synthesizer/LOAD_FOOTER_SUCCESS';
+const LOAD_FOOTER_FAILURE = 'synthesizer/LOAD_FOOTER_FAILURE';
 
 import FOOTER_MOCK_DATA from '../../data/FOOTER_MOCK_DATA';
 
@@ -25,7 +25,7 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         loading: false,
         loaded: true,
-        currentYear: action.result.currentYear
+        currentYear: action.result
       };
     case LOAD_FOOTER_FAILURE:
       return {
