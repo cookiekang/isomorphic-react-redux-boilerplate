@@ -10,7 +10,7 @@ const Footer = ({
 }) => {
 
   return (
-    <div id="Footer" className="twc-footer">
+    <div id="Footer" className="footer">
       <p>Footer</p>
     </div>
   );
