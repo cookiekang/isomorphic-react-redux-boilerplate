@@ -82,7 +82,7 @@ export function loadSynthesizersListAsync() {
     dispatch(loadSynthesizersListPending());
     // return new Promise((resolve) => {
     //   resolve({
-    //     synthesizerPage: param
+    //     synthesizer: param
     //   });
     // })
 

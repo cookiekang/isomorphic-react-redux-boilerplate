@@ -6,7 +6,7 @@ export default combineReducers({
   synthesizersList
 });
 
-export function loadSynthesizerPageAsync() {
+export function loadSynthesizerAsync() {
   return (dispatch) => settle([
     dispatch(loadSynthesizersListAsync())
   ]);

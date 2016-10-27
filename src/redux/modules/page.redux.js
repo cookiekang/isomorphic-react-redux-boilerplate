@@ -1,4 +1,6 @@
 import { changeLocale } from './locale.redux';
+// import { loadHeaderAsync } from './header.redux';
+import { loadFooterAsync } from './footer.redux';
 
 export function loadPageAsync(locale) {
   if (!locale) {
@@ -7,6 +9,8 @@ export function loadPageAsync(locale) {
 
   return (dispatch) => {
     dispatch(changeLocale(locale));
+    // dispatch(loadHeaderAsync());
+    dispatch(loadFooterAsync());
     return;
   };
 }

@@ -1,10 +1,10 @@
 {
   "en-US": {
     "home": "home",
-    "synthesizerPage": "synthesizers"
+    "synthesizer": "synthesizers"
   },
   "fr-FR": {
     "home": "domicile",
-    "synthesizerPage": "synthetiseurs"
+    "synthesizer": "synthetiseurs"
   }
 }

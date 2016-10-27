@@ -7,7 +7,11 @@ i18n
   .init({
     whitelist: ['en-US', ...supportedLocales],
     fallbackLng: 'en-US',
-    ns: ['common'],
+    ns: [
+      'common',
+      'footer',
+      'synthesizer'
+    ],
     defaultNS: 'common',
     // debug: true,
     interpolation: {

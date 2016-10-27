@@ -2,6 +2,7 @@ import { reducer as reduxAsyncConnect } from 'redux-connect';
 import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
 import home from './modules/home.redux';
+import footer from './modules/footer.redux';
 
 export const makeRootReducer = (asyncReducers) => combineReducers({
   // Add sync reducers here
@@ -10,11 +11,12 @@ export const makeRootReducer = (asyncReducers) => combineReducers({
 
   // Page reducers
   home,
+  footer,
 
   // Pseudo async reducers
   // These are injected by webpack bundles when navigated to the route
   // https://gist.github.com/gaearon/0a2213881b5d53973514
-  synthesizerPage: (state = {}) => state,
+  synthesizer: (state = {}) => state,
   ...asyncReducers
 });
 

@@ -21,7 +21,7 @@ export default class Home extends Component {
       <div>
         <Helmet title="Home" />
         <h1>{t('common:helloworld')}</h1>
-        <Link to="/synthesizerPage">Boilerplate page</Link>
+        <Link to="/synthesizer">Boilerplate page</Link>
         {
           isWelcomeMessage && (
             <p>Welcome message shows on componentDidMount via redux prop showWelcomeMessage()</p>
