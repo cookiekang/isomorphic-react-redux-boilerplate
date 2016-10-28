@@ -3,6 +3,8 @@ import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
 import { reducer as storageReducer } from 'redux-storage';
 import locale from './modules/locale.redux';
+import sidebar from './modules/sidebar.redux';
+import navbar from './modules/navbar.redux';
 import footer from './modules/footer.redux';
 import localForage from './modules/localForage.redux';
 
@@ -13,6 +15,8 @@ export const makeRootReducer = (asyncReducers) => storageReducer(combineReducers
 
   // Page reducers
   locale,
+  sidebar,
+  navbar,
   footer,
   localForage,
 

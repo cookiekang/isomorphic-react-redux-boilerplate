@@ -10,6 +10,8 @@ const i18nServer = i18next
     fallbackLng: 'en-US',
     ns: [
       'common',
+      'navbar',
+      'sidebar',
       'footer',
       'synthesizer'
     ],

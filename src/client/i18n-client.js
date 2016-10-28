@@ -9,6 +9,8 @@ i18n
     fallbackLng: 'en-US',
     ns: [
       'common',
+      'navbar',
+      'sidebar',
       'footer',
       'synthesizer'
     ],

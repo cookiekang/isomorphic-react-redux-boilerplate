@@ -19,7 +19,7 @@ const LOAD_SYNTHESIZERS_LIST_FAILURE = 'synthesizer/LOAD_SYNTHESIZERS_LIST_FAILU
 // This is the initial state of what the reducer sets to the
 // redux store.
 const initialState = {
-  synthesizersList: {},
+  list: [],
   loading: false,
   loaded: false,
   error: undefined
@@ -41,7 +41,7 @@ export default function reducer(state = initialState, action = {}) {
     case LOAD_SYNTHESIZERS_LIST_SUCCESS:
       return {
         ...state,
-        synthesizersList: action.result.synthesizersList,
+        list: action.result.synthesizersList,
         loading: false,
         loaded: true
       };
@@ -80,12 +80,6 @@ export default function reducer(state = initialState, action = {}) {
 export function loadSynthesizersListAsync() {
   return (dispatch) => {
     dispatch(loadSynthesizersListPending());
-    // return new Promise((resolve) => {
-    //   resolve({
-    //     synthesizer: param
-    //   });
-    // })
-
     return getSynthesizersList()
       .then(data => dispatch(loadSynthesizersListSuccess(data)))
       .catch(err => dispatch(loadSynthesizersListFailure(err)));

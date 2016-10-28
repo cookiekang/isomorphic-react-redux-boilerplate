@@ -1,5 +1,6 @@
 import { changeLocale } from './locale.redux';
-// import { loadHeaderAsync } from './header.redux';
+// import { loadNavbarAsync } from './navbar.redux';
+import { loadSidebarAsync } from './sidebar.redux';
 import { loadFooterAsync } from './footer.redux';
 
 export function loadPageAsync(locale) {
@@ -9,7 +10,8 @@ export function loadPageAsync(locale) {
 
   return (dispatch) => {
     dispatch(changeLocale(locale));
-    // dispatch(loadHeaderAsync());
+    // dispatch(loadNavbarAsync());
+    dispatch(loadSidebarAsync());
     return dispatch(loadFooterAsync());
   };
 }
