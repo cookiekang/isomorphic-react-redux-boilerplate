@@ -1,4 +1,4 @@
-import aboutRoute from './pages/About.route';
+import helpRoute from './pages/Help.route';
 import synthesizerRoute from './pages/Synthesizer.route';
 import flatten from 'lodash/flatten';
 
@@ -12,8 +12,8 @@ const childRoutes = [
     route: synthesizerRoute
   },
   {
-    translationKey: 'about',
-    route: aboutRoute
+    translationKey: 'help',
+    route: helpRoute
   }
 ];
 

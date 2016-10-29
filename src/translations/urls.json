@@ -1,10 +1,10 @@
 {
   "en-US": {
-    "about": "about",
+    "help": "help",
     "synthesizer": "synthesizers"
   },
   "fr-FR": {
-    "about": "sur",
+    "help": "aidez-moi",
     "synthesizer": "synthetiseurs"
   }
 }

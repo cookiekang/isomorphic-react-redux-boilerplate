@@ -15,16 +15,16 @@ export default (store, path) => ({
 
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const About = require('../../components/About');
-      const reducer = require('../../redux/modules/about.redux').default;
+      const Help = require('../../components/Help');
+      const reducer = require('../../redux/modules/help.redux').default;
 
       /*  Add the reducer to the store on key 'hourly'  */
-      injectReducer(store, { key: 'about', reducer });
+      injectReducer(store, { key: 'help', reducer });
 
       /*  Return getComponent   */
-      cb(null, About);
+      cb(null, Help);
 
     /* Webpack named bundle   */
-    }, 'about');
+    }, 'help');
   }
 });
