@@ -1,11 +1,18 @@
-import { connect } from 'react-redux';
+import { asyncConnect } from 'redux-connect';
+import { loadPageAsync } from '../../redux/modules/page.redux';
+import { loadHelpAsync } from '../../redux/modules/help.redux';
 
-const mapActionCreators = {};
+/* eslint-disable */
+const mapStateToProps = ({ locale: { locale }, help }) => {
 
-const mapStateToProps = ({
-  help
-}) => ({
-  help
-});
+  return {
+    locale,
+    help
+  };
+};
 
-export default connect(mapStateToProps, mapActionCreators);
+export default asyncConnect([{
+  promise: ({ store: { dispatch }, params: { locale } }) =>
+    dispatch(loadPageAsync(locale))
+      .then(() => dispatch(loadHelpAsync()))
+}], mapStateToProps);

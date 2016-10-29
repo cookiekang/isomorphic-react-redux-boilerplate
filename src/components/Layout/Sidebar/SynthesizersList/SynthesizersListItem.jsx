@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 const SynthesizersListItem = ({ synthesizersItem, t }) => {
 
   return (
     <li className="active">
-      <a href="#">
+      <Link to="/synthesizers">
         {synthesizersItem.name} <span className="sr-only">(current)</span>
-      </a>
+      </Link>
     </li>
   );
 };

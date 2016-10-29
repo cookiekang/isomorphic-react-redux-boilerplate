@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import './sass/Navbar.scss';
 
 const Navbar = ({
@@ -27,12 +28,12 @@ const Navbar = ({
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-right">
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Help</a></li>
+          <li>
+            <Link to="/help">
+              Help
+            </Link>
+          </li>
         </ul>
-        <form className="navbar-form navbar-right">
-          <input type="text" className="form-control" placeholder="Search..." />
-        </form>
       </div>
     </div>
   </nav>
