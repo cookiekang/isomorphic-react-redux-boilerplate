@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import './sass/Navbar.scss';
 
-const Navbar = () => (
+const Navbar = ({
+  t,
+  navbar
+}) => (
   <nav
     className="navbar navbar-inverse navbar-fixed-top"
   >
@@ -20,13 +23,11 @@ const Navbar = () => (
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
         </button>
-        <a className="navbar-brand" href="#">Synthesizer</a>
+        <a className="navbar-brand title" href="#">{t('common:synthesizer')}</a>
       </div>
       <div id="navbar" className="navbar-collapse collapse">
         <ul className="nav navbar-nav navbar-right">
           <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Profile</a></li>
           <li><a href="#">Help</a></li>
         </ul>
         <form className="navbar-form navbar-right">
@@ -36,5 +37,10 @@ const Navbar = () => (
     </div>
   </nav>
 );
+
+Navbar.propTypes = {
+  navbar: PropTypes.object.isRequired,
+  t: PropTypes.func.isRequired
+};
 
 export default Navbar;

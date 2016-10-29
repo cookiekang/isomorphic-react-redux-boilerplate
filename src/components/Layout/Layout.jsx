@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import Navbar from '../Navbar';
-import Sidebar from '../Sidebar';
-import Footer from '../Footer';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
+import Footer from './Footer';
 import '../../sass/global-styles.scss';
 
 export const Layout = ({ children }) => {
@@ -12,14 +12,13 @@ export const Layout = ({ children }) => {
       <div className="container-fluid">
         <div className="row">
           {<Sidebar />}
+          {/* Main */}
+          <div className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            {
+              children ? children : <p>Choose a synthesizer</p>
+            }
+          </div>
         </div>
-      </div>
-      {<Sidebar />}
-      {/* Main */}
-      <div className="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        {
-          children ? children : <p>Choose a synthesizer</p>
-        }
       </div>
       <footer id="Footer">
         {<Footer />}
