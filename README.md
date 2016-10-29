@@ -14,6 +14,7 @@
   - [Technologies](#technologies)
   - [Folder Structure](#folder-structure)
 - [TODO](#todo)
+- [Thanks](#thanks)
 
 <a name="installation"></a>
 ## Installation
@@ -279,3 +280,10 @@ Unit tests should...
 * add in first synthesizer
 * add in tests
 * add linter for scss
+
+<a name="thanks"></a>
+### THANKS
+Special thanks to these repositories and tutorials.
+* Big thanks to [Yamaha DX7]() by Matt Montag. Your Yamaha DX7 Synth was the inspiration behind this project. It was fun translating your code from Angular to React
+* [The Web Audio API](https://code.tutsplus.com/tutorials/the-web-audio-api-make-your-own-web-synthesizer--cms-23887) on tutsplus for giving me a basis on how Web Audio API works
+* [Learning Pixi](https://github.com/kittykatattack/learningPixi) for giving me a basis on how pixi.js works
