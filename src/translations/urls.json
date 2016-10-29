@@ -1,12 +1,10 @@
 {
   "en-US": {
     "about": "about",
-    "contact":"contact",
     "synthesizer": "synthesizers"
   },
   "fr-FR": {
     "about": "sur",
-    "contact": "contact",
     "synthesizer": "synthetiseurs"
   }
 }

@@ -13,6 +13,7 @@ const i18nServer = i18next
       'navbar',
       'sidebar',
       'footer',
+      'about',
       'synthesizer'
     ],
     defaultNS: 'common',

@@ -2,8 +2,6 @@ import React, { PropTypes } from 'react';
 
 const SynthesizersListItem = ({ synthesizersItem, t }) => {
 
-  debugger;
-
   return (
     <li className="active">
       <a href="#">

@@ -12,6 +12,7 @@ i18n
       'navbar',
       'sidebar',
       'footer',
+      'about',
       'synthesizer'
     ],
     defaultNS: 'common',
