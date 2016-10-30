@@ -1,8 +1,5 @@
 import React, { PropTypes } from 'react';
 import Helmet from 'react-helmet';
-const pixi = isClient() ? require('pixi.js') : '';
-const { Stage, Sprite, VectorText } = isClient() ? require('react-pixi') : '';
-// import {Stage, Sprite, VectorText} from 'react-pixi';
 import isClient from '../../utils/isClient';
 import './scss/Synthesizer.scss';
 
@@ -12,8 +9,6 @@ const Synthesizer = ({
 }) => {
 
   const title = t('common:synthesizer');
-
-  console.log(pixi);
 
   return (
     <div>
