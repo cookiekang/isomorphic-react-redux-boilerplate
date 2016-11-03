@@ -15,16 +15,16 @@ export default (store, path) => ({
 
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Synthesizer = require('../../components/Synthesizer');
-      const reducer = require('../../redux/modules/synthesizer.redux').default;
+      const SynthesizerPage = require('../../components/SynthesizerPage');
+      const reducer = require('../../redux/modules/synthesizerPage.redux').default;
 
       /*  Add the reducer to the store on key 'hourly'  */
-      injectReducer(store, { key: 'synthesizer', reducer });
+      injectReducer(store, { key: 'synthesizerPage', reducer });
 
       /*  Return getComponent   */
-      cb(null, Synthesizer);
+      cb(null, SynthesizerPage);
 
     /* Webpack named bundle   */
-    }, 'synthesizer');
+    }, 'synthesizerPage');
   }
 });

@@ -1,10 +1,10 @@
 {
   "en-US": {
     "help": "help",
-    "synthesizer": "synthesizers"
+    "synthesizerPage": "synthesizers"
   },
   "fr-FR": {
     "help": "aidez-moi",
-    "synthesizer": "synthetiseurs"
+    "synthesizerPage": "synthetiseurs"
   }
 }

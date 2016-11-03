@@ -1,11 +1,11 @@
 import { asyncConnect } from 'redux-connect';
 import { loadPageAsync } from '../../redux/modules/page.redux';
-import { loadSynthesizerAsync } from '../../redux/modules/synthesizer.redux';
+import { loadSynthesizerPageAsync } from '../../redux/modules/synthesizerPage.redux';
 
-const mapStateToProps = ({ locale: { locale }, synthesizer }) => {
+const mapStateToProps = ({ locale: { locale }, synthesizerPage }) => {
   const {
     synthesizersList
-  } = synthesizer;
+  } = synthesizerPage;
 
   return {
     locale,
@@ -16,5 +16,5 @@ const mapStateToProps = ({ locale: { locale }, synthesizer }) => {
 export default asyncConnect([{
   promise: ({ store: { dispatch }, params: { locale } }) =>
     dispatch(loadPageAsync(locale))
-      .then(() => dispatch(loadSynthesizerAsync()))
+      .then(() => dispatch(loadSynthesizerPageAsync()))
 }], mapStateToProps);

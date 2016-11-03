@@ -1,5 +1,5 @@
 import helpRoute from './pages/Help.route';
-import synthesizerRoute from './pages/Synthesizer.route';
+import synthesizerPageRoute from './pages/SynthesizerPage.route';
 import flatten from 'lodash/flatten';
 
 // Generated from all urls.json translated in translations directory
@@ -8,8 +8,8 @@ import urls from '../translations/urls.json';
 // Configured for all child routes that need to be translated for
 const childRoutes = [
   {
-    translationKey: 'synthesizer',
-    route: synthesizerRoute
+    translationKey: 'synthesizerPage',
+    route: synthesizerPageRoute
   },
   {
     translationKey: 'help',

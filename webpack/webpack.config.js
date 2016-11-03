@@ -52,8 +52,6 @@ const WebPackConfig = {
       },
       {
         test: /\.json$/,
-        exclude: /node_modules\/(?!(pixi.js)\/).*/,
-        // include use of pixi.js's package.json file
         loader: 'json-loader'
       },
       {
@@ -80,12 +78,6 @@ const WebPackConfig = {
       {
         test: /\.png$/,
         loader: 'url-loader?limit=10240'
-      }
-    ],
-    postLoaders: [
-      {
-        include: path.resolve(__dirname, 'node_modules/pixi.js'),
-        loader: 'transform?brfs'
       }
     ]
   },

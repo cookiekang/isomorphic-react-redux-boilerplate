@@ -23,7 +23,7 @@ export const makeRootReducer = (asyncReducers) => storageReducer(combineReducers
   // Pseudo async reducers
   // These are injected by webpack bundles when navigated to the route
   // https://gist.github.com/gaearon/0a2213881b5d53973514
-  synthesizer: (state = {}) => state,
+  synthesizerPage: (state = {}) => state,
   help: (state = {}) => state,
   ...asyncReducers
 }));
