@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 import isClient from '../../utils/isClient';
+// import SynthesizerCanvas from './SynthesizerCanvas';
 import './scss/SynthesizerPage.scss';
 
 export default class SynthesizerPage extends Component {
@@ -9,36 +10,28 @@ export default class SynthesizerPage extends Component {
   }
 
   render() {
-
     const {
-      t
+      t,
+      waveforms
     } = this.props;
 
     const title = t('common:synthesizer');
-    // let canvas;
-
-    if (!isClient() && typeof document === 'undefined') {
-      // canvas = (<div></div>);
-    } else {
-      // /* eslint-disable */
-      // const ReactPIXI = require('react-pixi');
-      // const PIXI = require('pixi.js');
-      // const zombie = require('zombie');
-      // /* eslint-disable */
-      //
-      // const Stage = ReactPIXI.Stage;
-      // const TilingSprite = ReactPIXI.TilingSprite;
-      // const Text = ReactPIXI.Text;
-      //
-      // canvas = (<Stage width={1366} height={this.props.height}>
-      //   <TilingSprite image={zombie} width={1366} height={768} key="1" />
-      // </Stage>);
-    }
+    // let synthesizerCanvas;
+    //
+    // if (!isClient() && typeof document === 'undefined') {
+    //   synthesizerCanvas = (<div></div>);
+    // } else {
+    //   /* eslint-disable */
+    //   const makeSound = require('../../utils/makeSound');
+    //   /* eslint-disable */
+    //
+    //   synthesizerCanvas = (<SynthesizerCanvas makeSound={makeSound}/>);
+    // }
 
     return (
       <div>
         <Helmet title={title} />
-        {/* {canvas} */}
+        {/* {synthesizerCanvas} */}
       </div>
     )
   }

@@ -1,13 +1,13 @@
 import settle from 'promise-settle';
 import { combineReducers } from 'redux';
-import synthesizersList, { loadSynthesizersListAsync } from './synthesizersList.redux';
+import waveforms, { loadWaveformsAsync } from './waveforms.redux';
 
 export default combineReducers({
-  synthesizersList
+  waveforms
 });
 
 export function loadSynthesizerPageAsync() {
   return (dispatch) => settle([
-    dispatch(loadSynthesizersListAsync())
+    dispatch(loadWaveformsAsync())
   ]);
 }
